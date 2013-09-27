@@ -2,6 +2,12 @@
 	<div class="span4">
 		
 		<div ng-controller="IndexCtrl">
+			
+			<form ng-submit="addVideo()">
+				<input type="text" ng-model="newVideo.title" placeholder="video title">
+				<input type="submit" value="Add" class="btn btn-primary">
+			</form>
+			
 			<h3 class="text-center">playlist</h3>
 			<div ng-repeat="video in data.videos">
 				<p><a ng-click="viewVideo($index)">{{ video.title }}</a></p>
@@ -11,7 +17,7 @@
 	</div>
 	
 	<div class="span8">
-		<div class="containedr" ng-view>
+		<div class="containerXXX" ng-view>
 
 		</div>
 	</div>

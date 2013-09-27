@@ -8,4 +8,13 @@ class VideosController < ApplicationController
     end
   end
   
+  def create
+    respond_with Video.create(params[:video])
+  end
+  
+  def show
+    
+  end
+  
+  
 end
