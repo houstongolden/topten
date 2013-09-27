@@ -1,13 +1,14 @@
-@IndexCtrl = ($scope, $location, $http, videoData) ->
-
+@IndexCtrl = ($scope, $location, $http, videoData, Video) ->
+	
 	$scope.data = videoData.data
 		
 	videoData.loadVideos()
 		
 	$scope.viewVideo = (videoId) ->
-		$location.url('/video/'+videoId)
+		$location.url('/videos/'+videoId)
 		
 	$scope.addVideo = ->
+		# video = Video.save($scope.newVideo)
 		videoData.data.videos.push($scope.newVideo)
 		$scope.newVideo = {}
 		

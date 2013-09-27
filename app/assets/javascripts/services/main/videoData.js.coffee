@@ -18,3 +18,6 @@ angular.module('TopTen').factory('videoData', ['$http', ($http) ->
 	return videoData
 
 ])
+
+angular.module('TopTen').factory "Video", ($resource) ->
+	$resource("/videos/:id", {id: "@id"}, {update: {method: "PUT"}})

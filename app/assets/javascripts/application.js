@@ -17,3 +17,4 @@
 //= require jquery.ui.all
 //= require underscore
 //= require angular
+//= require angular-resource
