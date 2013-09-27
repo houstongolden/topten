@@ -7,3 +7,4 @@
 	$scope.viewVideo = (videoId) ->
 		$location.url('/video/'+videoId)
 		
+@IndexCtrl.$inject = ['$scope', '$location', '$http', 'videoData']

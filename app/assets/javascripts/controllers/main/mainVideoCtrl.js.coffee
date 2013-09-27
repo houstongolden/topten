@@ -1,7 +1,10 @@
 @VideoCtrl = ($scope, $routeParams, videoData) ->
 
 	$scope.data = 
-		video: videoData.data.videos[0]
+		videoData: videoData.data
 		
+	videoData.loadVideos()
+	
 	$scope.data.videoId = $routeParams.videoId
-	console.log($routeParams)
+	
+@VideoCtrl.$inject = ['$scope', '$routeParams', 'videoData']
