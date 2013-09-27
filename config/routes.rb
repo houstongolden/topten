@@ -1,5 +1,7 @@
 Topten::Application.routes.draw do
   
+  resources :playlists
+
   resources :videos
   
   get "main/index"
