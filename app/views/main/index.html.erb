@@ -1,3 +1,24 @@
-<div class="container" ng-view>
+<div class="row">
+	<div class="span4">
+		
+		<div ng-controller="IndexCtrl">
+			<h3 class="text-center">playlist</h3>
+			<div ng-repeat="video in data.videos">
+				<p><a ng-click="viewVideo($index)">{{ video.title }}</a></p>
+			</div>
+		</div>		
+		
+	</div>
+	
+	<div class="span8">
+		<div class="containedr" ng-view>
+
+		</div>
+	</div>
 	
 </div>
+
+
+
+
+
