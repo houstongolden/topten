@@ -21,8 +21,10 @@ gem 'coffee-rails', '~> 4.0.0'
 # Use jquery as the JavaScript library
 gem 'therubyracer'
 gem 'less-rails'
-gem 'twitter-bootstrap-rails'
+gem 'twitter-bootstrap-rails', '>= 2.2.6'
 gem 'jquery-rails'
+gem 'jquery-ui-rails', '>= 4.0.3'
+gem 'designmodo-flatuipro-rails'
 
 gem 'underscore-rails'
 gem 'angularjs-rails'
