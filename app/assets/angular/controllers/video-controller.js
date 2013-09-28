@@ -14,7 +14,8 @@ topten.controller('VideosController', ['$scope', 'Video', '$routeParams', functi
 
             //If we're successful then add the response (the object as the server sees it)
             // to our collection of comments
-            $scope.videos.unshift(response);
+            // $scope.videos.unshift(response);
+						$scope.videos.push(response);
 
             //Empty the name & body
             $scope.title = $scope.youtubeId = ""

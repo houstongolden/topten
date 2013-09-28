@@ -4,9 +4,9 @@
 		<h3 class="text-center">{{ playlist.name }}</h3>
 		
 		<form ng-submit="save()">
-			<input type="text" ng-model="title" placeholder="title">
-			<input type="text" ng-model="youtubeId" placeholder="youtube id">
-			<input type="text" ng-model="url" placeholder="youtube url">
+			<input type="text" ng-model="title" placeholder="title" required>
+			<input type="text" ng-model="youtubeId" placeholder="youtube id" required>
+			<input type="text" ng-model="url" placeholder="youtube url" required>
 			<button type="submit" class="btn btn-primary">add video</button>
 		</form>
 		
@@ -16,7 +16,7 @@
 	</div>
 	xx`
 	<div class="span8">
-		<iframe width="720" height="405" src="//www.youtube.com/embed/{{ currentVideo.youtube_id }}?autoplay=0&controls=0&showinfo=0&rel=0" frameborder="0" allowfullscreen></iframe>
+		<iframe width="720" height="405" src="//www.youtube.com/embed/{{ currentVideo.youtube_id }}?autoplay=1&controls=0&showinfo=0&rel=0" frameborder="0" allowfullscreen></iframe>
 	</div>
 	
 	
