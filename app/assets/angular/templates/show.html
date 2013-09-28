@@ -7,10 +7,10 @@
 		<div class="span4">
 			<h3 class="text-center">{{ playlist.name }}</h3>
 			<form ng-submit="save()">
-				<input type="text" ng-model="title" placeholder="title" required>
-				<input type="text" ng-model="youtubeId" placeholder="youtube id" required>
-				<input type="text" ng-model="url" placeholder="http:www.youtube.com/watch?v=..." required>
-				<button type="submit" class="btn btn-primary" style="margin-top: -7px;"><span class="fui-plus"></span></button>
+				<input type="text" ng-model="title" class="span1" placeholder="title" required>
+				<input type="text" ng-model="youtubeId" class="span1" placeholder="id" required>
+				<input type="text" ng-model="url" class="span1" placeholder="url" required>
+				<button type="submit" class="btn btn-primary" style="margin-top: -10px;"><span class="fui-plus"></span></button>
 			</form>
 			<div ng-repeat="video in videos">
 				<p><span ng-show="video.isPlaying" class="fui-triangle-right-large current-video"></span><a ng-click="viewVideo(video)">{{ $index + 1 }}. {{ video.title }}</a></p>
