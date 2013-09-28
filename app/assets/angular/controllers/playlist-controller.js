@@ -40,7 +40,5 @@ topten.controller('PlaylistCreateController', ['$scope', '$location', 'Playlist'
 topten.controller('PlaylistShowController', ['$scope', 'Playlist', 'Video', '$routeParams', function($scope, Playlist, Video, $routeParams) {
     //Grab the forum from the server
     $scope.playlist = Playlist.get({id: $routeParams.id})
-		$scope.videos
 		console.log($scope.playlist);
-		console.log($scope.videos);
 }]);

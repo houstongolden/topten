@@ -25,4 +25,11 @@ topten.controller('VideosController', ['$scope', 'Video', '$routeParams', functi
             $scope.errors = response.data.errors;
         });
     }
+
+		$scope.viewVideo = function(video) { 
+			$scope.currentVideo = video;
+			console.log($scope.currentVideo);
+			
+		};
+		
 }]);

@@ -29,6 +29,10 @@ gem 'designmodo-flatuipro-rails'
 gem 'underscore-rails'
 gem 'angularjs-rails'
 
+gem 'inherited_resources'
+
+gem 'protected_attributes'
+
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 # gem 'turbolinks'
 
