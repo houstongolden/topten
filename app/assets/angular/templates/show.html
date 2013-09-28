@@ -1,23 +1,29 @@
-<div ng-controller="VideosController">
-		
-	<div class="span4">
-		<h3 class="text-center">{{ playlist.name }}</h3>
-		
-		<form ng-submit="save()">
-			<input type="text" ng-model="title" placeholder="title" required>
-			<input type="text" ng-model="youtubeId" placeholder="youtube id" required>
-			<input type="text" ng-model="url" placeholder="youtube url" required>
-			<button type="submit" class="btn btn-primary">add video</button>
-		</form>
-		
-		<div ng-repeat="video in videos">
-			<p><a ng-click="viewVideo(video)">{{ $index + 1 }}. {{ video.title }}</a></p>
+<div class="row">
+
+
+
+	<div ng-controller="VideosController">
+
+		<div class="span4">
+			<h3 class="text-center">{{ playlist.name }}</h3>
+			<form ng-submit="save()">
+				<input type="text" ng-model="title" placeholder="title" required>
+				<input type="text" ng-model="youtubeId" placeholder="youtube id" required>
+				<input type="text" ng-model="url" placeholder="youtube url" required>
+				<button type="submit" class="btn btn-primary">add video</button>
+			</form>
+			<div ng-repeat="video in videos">
+				<p><a ng-click="viewVideo(video)">{{ $index + 1 }}. {{ video.title }}</a></p>
+			</div>
 		</div>
+
+		<div class="span8">
+			<iframe width="720" height="405" src="//www.youtube.com/embed/{{ currentVideo.youtube_id }}?autoplay=1&controls=0&showinfo=0&rel=0" frameborder="0" allowfullscreen></iframe>
+		</div>
+
 	</div>
-	
-	<div class="span8">
-		<iframe width="720" height="405" src="//www.youtube.com/embed/{{ currentVideo.youtube_id }}?autoplay=1&controls=0&showinfo=0&rel=0" frameborder="0" allowfullscreen></iframe>
-	</div>
-	
+
+
 	
 </div>
+
