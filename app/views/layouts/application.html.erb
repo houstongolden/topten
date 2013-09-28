@@ -1,15 +1,18 @@
 <!DOCTYPE html>
-<html ng-app="TopTen">
+<html ng-app="topten">
 <head>
   <title>mytop10</title>
   <%= stylesheet_link_tag    "application", media: "all" %>
-  <%= javascript_include_tag "application", controller_name %>
+  <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<%= render :partial => 'layouts/nav' %>	
+	<%= render :partial => 'layouts/nav' %>
 	
 	<div class="yield-container">
+		
+		<div id="loading"><b>Loading...</b></div>
+		
 		<%= yield %>
 		
 	</div>

@@ -15,6 +15,7 @@
 //= require twitter/bootstrap
 //= require flatuipro
 //= require jquery.ui.all
-//= require underscore
 //= require angular
 //= require angular-resource
+//= require ../angular/app.js
+//= require_tree ../angular

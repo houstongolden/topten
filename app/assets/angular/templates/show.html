@@ -1,0 +1,27 @@
+<div ng-controller="VideosController">
+		
+	<div class="span4">
+		<h3 class="text-center">{{ playlist.name }}</h3>
+		
+		<form ng-submit="save()">
+			<input type="text" ng-model="title" placeholder="title">
+			<input type="text" ng-model="youtubeId" placeholder="youtube id">
+			<input type="text" ng-model="url" placeholder="youtube url">
+			<button type="submit" class="btn btn-primary">add video</button>
+		</form>
+		
+		<div ng-repeat"video in videos">
+			<p>{{ video.title }}</p>
+		</div>
+	</div>
+	
+	<div class="span8">
+		
+	</div>
+	
+	
+
+
+
+
+</div>

@@ -1,0 +1,16 @@
+/*
+    This is our main launch point from Angular. We'll put anything to do with the
+    general well being of our app in this file. For now it'll basically just contain
+    the routing information.
+
+    Our module will be called 'app'.
+ */
+
+angular.module('topten', ['ngResource', 'topten.loading'])
+.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
+  $routeProvider
+      .when('/',          {controller: 'PlaylistIndexController',    templateUrl: '<%= asset_path('templates/index.html') %>'})
+      .when('/playlist/new', {controller: 'PlaylistCreateController',   templateUrl: '<%= asset_path('templates/new.html') %>'})
+      .when('/playlist/:id', {controller: 'PlaylistShowController',     templateUrl: '<%= asset_path('templates/show.html') %>'})
+      .otherwise({redirectTo: '/'});
+}]);
