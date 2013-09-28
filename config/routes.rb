@@ -1,7 +1,10 @@
 Topten::Application.routes.draw do
   
+  # resources :playlists, :defaults => {format: :json} do
+  #   resources :videos, :defaults => {format: :json}
+  # end
+  
   resources :playlists
-
   resources :videos
   
   get "main/index"
