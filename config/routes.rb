@@ -4,6 +4,7 @@ Topten::Application.routes.draw do
     resources :videos, :defaults => {format: :json}
   end
   
+  
   # resources :playlists
   # resources :videos
   

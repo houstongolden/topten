@@ -3,6 +3,9 @@ var topten = angular.module('topten');
 topten.controller('VideosController', ['$scope', 'Video', '$routeParams', function($scope, Video, $routeParams) {
     //Grab all the comments from the server
     $scope.videos = Video.query({playlistId: $routeParams.id});
+		
+		$scope.currentVideo = {};
+		$scope.currentVideo.youtube_id = 'Cxliw92yHzs';
 
     //Define a 'save' method which will be called from the view.
     $scope.save = function() {
