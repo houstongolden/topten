@@ -1,7 +1,5 @@
 <div class="row">
-
-
-
+	
 	<div ng-controller="VideosController">
 
 		<div class="span4">
@@ -20,7 +18,7 @@
 
 		<div class="span8">
 			<div class="row">
-					<iframe width="720" height="405" src="//www.youtube.com/embed/{{ currentVideo.youtube_id }}?autoplay=1&controls=0&showinfo=0&rel=0" frameborder="0" allowfullscreen></iframe>
+					<iframe id="ytplayer" width="720" height="405" src="http://www.youtube.com/embed/{{ currentVideo.youtube_id }}?enablejsapi=1&autoplay=1&controls=0&showinfo=0&rel=0" frameborder="0" allowfullscreen></iframe>
 			</div>
 			<div class="row">
 				<div class="span2">
