@@ -6,7 +6,7 @@
     Our module will be called 'app'.
  */
 
-angular.module('topten', ['ngResource', 'topten.loading'])
+angular.module('topten', ['ngResource', 'topten.loading', 'youtube'])
 .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
   $routeProvider
       .when('/',          {controller: 'PlaylistIndexController',    templateUrl: '<%= asset_path('templates/index.html') %>'})

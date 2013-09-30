@@ -1,46 +1,39 @@
 <div class="row">
-	
-	<div ng-controller="VideosController">
 
-		<div class="span4">
-			<h6 class="text-center" style="margin-top: -10px; color: #f1c40f;">{{ playlist.name }}</h6>
-									
-			<ul class ="nav nav-list video-list">
-				<li ng-repeat="video in videos" class="item-video item-video-{{video.isCurrentSong}}">
-					<p>
-
-							<a ng-click="viewVideo(video)" href=""><span class="label label-small label-inverse label-index">{{ $index + 1}}</span> {{ video.title }}</a>
-
-					</p>
-				</li>
-			</ul>
-		</div>
-
-		<div class="span8">
-			<div class="row">
-					<iframe id="ytplayer" width="720" height="405" src="http://www.youtube.com/embed/{{ currentVideo.youtube_id }}?enablejsapi=1&autoplay=1&controls=0&showinfo=0&rel=0" frameborder="0" allowfullscreen></iframe>
-			</div>
-			<div class="row">
-				<div class="span4">
-					<form ng-submit="save()" class="text-center">
-						<input type="text" ng-model="url" class="small" placeholder="http:www.youtube.com/watch?v=" required>
-						<button type="submit" class="btn btn-inverse btn-mini" style="margin-top: -10px;"><span class="fui-plus"></span></button>
-					</form>
+	<div class="span4">
+		<div ng-controller="VideosController">
+				<div class="row">
+					<div class="span4">
+						<form ng-submit="save()" class="text-center">
+							<input type="text" ng-model="url" class="small" placeholder="http:www.youtube.com/watch?v=" required>
+							<button type="submit" class="btn btn-inverse btn-mini" style="margin-top: -10px;"><span class="fui-plus"></span></button>
+						</form>
+					</div>			
 				</div>
-				<div class="span2">
-					<button class="btn btn-primary current-video-control-btn"><span class="fui-arrow-left"></span></button>
-					<button class="btn btn-primary current-video-control-btn"><span class="fui-pause"></span></button>
-					<button class="btn btn-primary current-video-control-btn"><span class="fui-arrow-right"></span></button>
-					
-					
-												
-				</div>					
-			</div>
-		</div>
 
+				<h6 class="text-center" style="margin-top: -20px; color: #f1c40f;">{{ playlist.name }}</h6>
+
+				<ul class ="nav nav-list video-list">
+					<li ng-repeat="video in videos" class="item-video item-video-{{video.isCurrentSong}}">
+						<p><a ng-click="viewVideo(video)" href=""><span class="label label-small label-inverse label-index">{{ $index + 1}}</span> {{ video.title }}</a></p>
+					</li>
+				</ul>
+		</div>		
+	</div>	
+
+
+	<div class="span8">
+		<div ng-controller="PlayerController">	
+			<youtube-player id="ytplayer">
+
+			</youtube-player>
+
+				<button class="btn btn-primary" ng-click="playVideo();"><span class="fui-play"></span></button>
+				<button class="btn btn-primary" ng-click="pauseVideo();"><span class="fui-pause"></span></button>
+		</div>	
 	</div>
 
 
 	
-</div>
 
+</div>

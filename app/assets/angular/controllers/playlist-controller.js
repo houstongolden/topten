@@ -37,8 +37,17 @@ topten.controller('PlaylistCreateController', ['$scope', '$location', 'Playlist'
 }]);
 
 //A controller to show the forum and all it's glory
+// topten.controller('PlaylistShowController', ['$scope', 'Playlist', 'Video', '$routeParams', function($scope, Playlist, Video, $routeParams) {
+//     $scope.playlist = Playlist.get({id: $routeParams.id})
+// 		console.log('in playlist show controller');
+// 		console.log($scope.playlist);
+// 		console.log('in playlist show controller');
+// }]);
+
+
 topten.controller('PlaylistShowController', ['$scope', 'Playlist', 'Video', '$routeParams', function($scope, Playlist, Video, $routeParams) {
-    //Grab the forum from the server
     $scope.playlist = Playlist.get({id: $routeParams.id})
+		console.log('in playlist show controller');
 		console.log($scope.playlist);
+		console.log('in playlist show controller');
 }]);
