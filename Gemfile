@@ -30,6 +30,7 @@ gem 'underscore-rails'
 gem 'angularjs-rails'
 
 gem 'inherited_resources'
+gem 'youtube_it'
 
 gem 'protected_attributes'
 

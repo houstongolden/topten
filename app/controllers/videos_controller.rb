@@ -2,25 +2,10 @@ class VideosController < InheritedResources::Base
   belongs_to :playlist
   respond_to :json
   skip_before_filter :verify_authenticity_token
+  
+  def create
+    @video = Video.find_video_information(params[:video][:url])
+    @video.playlist_id = params[:playlist_id]
+    create!
+  end
 end
-
-# class VideosController < ApplicationController
-#   respond_to :json
-#   
-#   def index
-#     videos = Video.all
-#     respond_with(videos) do |format|
-#       format.json { render :json => videos.as_json }
-#     end
-#   end
-#   
-#   def create
-#     respond_with Video.create(params[:video])
-#   end
-#   
-#   def show
-#     
-#   end
-#   
-#   
-# end
