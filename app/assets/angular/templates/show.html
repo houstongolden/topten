@@ -10,7 +10,11 @@
 				<button type="submit" class="btn btn-primary" style="margin-top: -10px;"><span class="fui-plus"></span></button>
 			</form>
 			<div ng-repeat="video in videos">
-				<p><span ng-show="video.isPlaying" class="fui-triangle-right-large current-video"></span><a ng-click="viewVideo(video)" href="">{{ $index + 1 }}. {{ video.title }}</a></p>
+				<p>
+					
+						<span ng-show="video.isPlaying" class="fui-triangle-right-large current-video"></span><a ng-click="viewVideo(video)" href=""><span class="label label-inverse">{{ $index + 1 }}</span> {{ video.title }}</a>
+					
+				</p>
 			</div>
 		</div>
 
