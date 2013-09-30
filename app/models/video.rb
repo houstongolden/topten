@@ -25,4 +25,12 @@ class Video < ActiveRecord::Base
     youtube_id
   end
   
+  def self.shorten_titles
+    @videos = Video.all
+    @videos.each do |v|
+      v.title = v.title[0..35]
+      v.save
+    end
+  end
+  
 end

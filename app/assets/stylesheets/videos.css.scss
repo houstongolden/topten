@@ -13,3 +13,34 @@
 	margin-right: auto;
 
 }
+
+ul.video-list {
+/*	margin: 40px 0 0;*/
+  padding: 0;
+	li.item-video {
+		
+		margin: 10px 20% 0px 0px;
+/*		padding: 0 10% 40px;*/
+		
+
+		a {
+			background: #2ecc71;
+      border-radius: 10px;
+      box-shadow: 0 5px 0 #22a35a;
+      color: rgba(236, 240, 241, 0.8);
+      display: table;
+/*      padding: 20px 32px;*/
+			padding: 10px 16px;
+      position: relative;
+      table-layout: fixed;
+      text-decoration: none;
+      width: 100%;
+		}
+
+		p {
+			font-size: 12px !important;
+			color: red !important;	
+		}
+	}	
+}
+
