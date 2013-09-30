@@ -12,7 +12,8 @@ topten.controller('VideosController', ['$scope', 'Video', '$routeParams', functi
     //Define a 'save' method which will be called from the view.
     $scope.save = function() {
         //Create the comment object to be sent to the server
-        var obj = new Video({title: $scope.title, youtube_id: $scope.youtubeId, url: $scope.url, playlistId: $routeParams.id});
+        // var obj = new Video({title: $scope.title, youtube_id: $scope.youtubeId, url: $scope.url, playlistId: $routeParams.id});
+				var obj = new Video({url: $scope.url, playlistId: $routeParams.id});
 
         //Attempt a save to the back-end
         obj.$save(function(response) {
@@ -23,7 +24,7 @@ topten.controller('VideosController', ['$scope', 'Video', '$routeParams', functi
 						$scope.videos.push(response);
 
             //Empty the name & body
-            $scope.title = $scope.youtubeId = ""
+            $scope.url = "";
 
         }, function(response) {
 
