@@ -4,8 +4,11 @@ topten.controller('VideosController', ['$scope', 'Video', '$routeParams', functi
     //Grab all the comments from the server
     $scope.videos = Video.query({playlistId: $routeParams.id});
 		
+		console.log($scope.videos);
+		
 		// my night additions, could be eh
 		$scope.currentVideo = {};
+		// $scope.currentVideo = $scope.videos[0];
 		$scope.currentVideo.youtube_id = 'Cxliw92yHzs';
 		
 
@@ -36,9 +39,9 @@ topten.controller('VideosController', ['$scope', 'Video', '$routeParams', functi
 		$scope.viewVideo = function(video) { 
 			$scope.currentVideo = video;
 			angular.forEach($scope.videos, function(video) {
-				video.isPlaying = false;
+				video.isCurrentSong = '';
 			});
-			video.isPlaying = true;
+			video.isCurrentSong = 'current'
 			console.log($scope.currentVideo);
 			
 		};

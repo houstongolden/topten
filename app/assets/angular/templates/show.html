@@ -3,13 +3,13 @@
 	<div ng-controller="VideosController">
 
 		<div class="span4">
-			<h6 class="text-center" style="margin-top: -10px;">{{ playlist.name }}</h6>
+			<h6 class="text-center" style="margin-top: -10px; color: #f1c40f;">{{ playlist.name }}</h6>
 									
 			<ul class ="nav nav-list video-list">
-				<li ng-repeat="video in videos" class="item-video">
+				<li ng-repeat="video in videos" class="item-video item-video-{{video.isCurrentSong}}">
 					<p>
 
-							<span ng-show="video.isPlaying" class="fui-triangle-right-large current-video"></span><a ng-click="viewVideo(video)" href=""><span class="label label-inverse">{{ $index + 1}}</span> {{ video.title }}</a>
+							<a ng-click="viewVideo(video)" href=""><span class="label label-small label-inverse label-index">{{ $index + 1}}</span> {{ video.title }}</a>
 
 					</p>
 				</li>
