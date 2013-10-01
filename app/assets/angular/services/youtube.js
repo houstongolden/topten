@@ -26,8 +26,12 @@ angular.module('youtube', ['ng']).run(function () {
         service.playerId = "ytplayer";
         service.player = null;
 				service.videoId = "bK1ZsgQgViQ";
-        service.playerHeight = '360';
-        service.playerWidth = '640';
+				// service.playerHeight = '423';
+				// service.playerWidth = '752';
+				service.playerHeight = '405';
+				service.playerWidth = '720';
+        // service.playerHeight = '360';
+        // service.playerWidth = '640';
 
         service.bindVideoPlayer = function (elementId) {
             $log.info('Binding to player ' + elementId);
@@ -39,7 +43,13 @@ angular.module('youtube', ['ng']).run(function () {
             return new YT.Player(this.playerId, {
                 height: this.playerHeight,
                 width: this.playerWidth,
-                videoId: this.videoId
+                videoId: this.videoId,
+								playerVars: {
+									controls: 0,
+									modestbranding: 1,
+									rel: 0,
+									showinfo: 0
+								}
             });
         };
 
