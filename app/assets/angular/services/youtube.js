@@ -17,8 +17,9 @@ angular.module('youtube', ['ng']).run(function () {
         $window.onYouTubeIframeAPIReady = function () {
             $log.info('Youtube API is ready');
             service.ready = true;
-						service.bindVideoPlayer('ytplayer');
+						// service.bindVideoPlayer('ytplayer');
 						service.player = service.createPlayer();
+						// service.player = service.loadPlayer();
 						
         };
 
