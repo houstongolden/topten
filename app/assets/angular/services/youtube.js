@@ -29,8 +29,7 @@ angular.module('youtube', ['ng']).run(function () {
 				service.videoId = "bK1ZsgQgViQ";
 				service.playerHeight = '405';
 				service.playerWidth = '720';
-        // service.playerHeight = '360';
-        // service.playerWidth = '640';
+				service.playerState = -1;
 
         service.bindVideoPlayer = function (elementId) {
             $log.info('Binding to player ' + elementId);
@@ -48,9 +47,19 @@ angular.module('youtube', ['ng']).run(function () {
 									modestbranding: 1,
 									rel: 0,
 									showinfo: 0
+								},
+								events: {
+									'onStateChange': onPlayerStateChange
 								}
             });
         };
+
+				onPlayerStateChange = function () {
+					service.playerState = service.player.getPlayerState();
+					console.log('---inside onPlayerStateChange of youtube service---');
+					console.log(service.playerState);
+					console.log('---inside onPlayerStateChange of youtube service---');
+				};
 
         service.loadPlayer = function () {
 						console.log('inside loadPlayer');

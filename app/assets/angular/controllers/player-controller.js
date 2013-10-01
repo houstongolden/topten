@@ -3,8 +3,10 @@ var topten = angular.module('topten');
 topten.controller('PlayerController', ['$scope', 'Player', 'Video', 'sharedPlaylist', function($scope, Player, Video, sharedPlaylist) {
 		
 	$scope.player = Player;
-	$scope.playerState = {};
+	// $scope.playerState = {};
+	$scope.playerState = 1;
 	console.log('---');
+	console.log($scope.playerState);
 	console.log($scope.player);
 	// console.log($scope.player.getPlayerState());
 	console.log('---');
