@@ -23,17 +23,16 @@
 
 
 	<div class="span8">
-		<div ng-controller="PlayerController">	
-			<youtube-player id="ytplayer">
-
-			</youtube-player>
-
-				<button class="btn btn-primary" ng-click="playVideo();"><span class="fui-play"></span></button>
-				<button class="btn btn-primary" ng-click="pauseVideo();"><span class="fui-pause"></span></button>
-		</div>	
+			<div ng-controller="PlayerController">
+				<div class="row">
+					<youtube-player id="ytplayer"></youtube-player>
+				</div>
+				<div class="row">
+					<button class="btn btn-primary" ng-click="playVideo();"><span class="fui-play"></span></button>
+					<button class="btn btn-primary" ng-click="pauseVideo();"><span class="fui-pause"></span></button>
+				</div>		
+		</div>
+		
 	</div>
-
-
-	
 
 </div>

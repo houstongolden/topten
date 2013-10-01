@@ -20,3 +20,20 @@ topten.factory('Player', ['youtubePlayerApi', function(youtubePlayerApi) {
 	// console.log('we are here');
 	// console.log('we are here');
 }]);
+
+
+topten.factory('sharedPlaylist', function($rootScope) {
+	var sharedPlaylist = {};
+	sharedPlaylist.currentVideo = '';
+	sharedPlaylist.prepForBroadcast = function(vid) {
+		this.currentVideo = vid;
+		this.broadcastItem();
+	};
+	
+	sharedPlaylist.broadcastItem = function() {
+		$rootScope.$broadcast('handleBroadcast');
+	};
+	
+	return sharedPlaylist;
+	
+});

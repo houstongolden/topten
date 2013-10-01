@@ -1,6 +1,6 @@
 var topten = angular.module('topten');
 
-topten.controller('PlayerController', ['$scope', 'Player', 'Video', function($scope, Player, Video) {
+topten.controller('PlayerController', ['$scope', 'Player', 'Video', 'sharedPlaylist', function($scope, Player, Video, sharedPlaylist) {
 		
 	$scope.player = Player;
 	console.log($scope.player);
@@ -16,7 +16,16 @@ topten.controller('PlayerController', ['$scope', 'Player', 'Video', function($sc
 	$scope.pauseVideo = function() {
 		$scope.player.player.pauseVideo();
 		console.log('inside of the pauseVideo');
+	},
+	
+	$scope.changeVideo = function() {
+		$scope.player.player.loadVideoById('ylLqUsEOhpk');	
 	}
+	
+	$scope.$on('handleBroadcast', function() {
+		$scope.player.player.loadVideoById(sharedPlaylist.currentVideo);
+	});
+	
 	
 }]);
 
