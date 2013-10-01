@@ -26,8 +26,6 @@ angular.module('youtube', ['ng']).run(function () {
         service.playerId = "ytplayer";
         service.player = null;
 				service.videoId = "bK1ZsgQgViQ";
-				// service.playerHeight = '423';
-				// service.playerWidth = '752';
 				service.playerHeight = '405';
 				service.playerWidth = '720';
         // service.playerHeight = '360';
