@@ -10,15 +10,6 @@ topten.factory('Video', ['$resource', function($resource) {
 
 topten.factory('Player', ['youtubePlayerApi', function(youtubePlayerApi) {
 	return youtubePlayerApi
-	
-	// console.log('we are here');
-	// console.log('we are here');
-	// console.log(youtubePlayerApi);
-	// console.log(youtubePlayerApi.player);
-	// console.log(youtubePlayerApi.playerId);
-	// console.log(youtubePlayerApi.videoId);
-	// console.log('we are here');
-	// console.log('we are here');
 }]);
 
 
