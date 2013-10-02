@@ -22,7 +22,8 @@
 					<li ng-repeat="video in videos" class="item-video item-current-video-{{video.isCurrentSong}}">
 						<p>
 							<a ng-click="viewVideo(video)" href="">
-								<span class="label label-small label-inverse label-index">{{ $index + 1}}</span>
+								<span class="label label-small label-inverse label-index" ng-show="video.isCurrentSong"><i class='fui-play current-song-play-icon'></i></span>
+								<span class="label label-small label-inverse label-index" ng-hide="video.isCurrentSong">{{ $index + 1}}</span>
 								 {{ video.title }}
 							</a>
 						</p>

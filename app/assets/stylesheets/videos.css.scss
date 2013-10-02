@@ -62,7 +62,7 @@ ul.video-list {
 		.label-index {
 			color: #f1c40f !important;
 		}
-		
+				
 		a {
 			background: #3498db;
 			box-shadow: 0 3px #2980b9;
@@ -76,6 +76,13 @@ ul.video-list {
 	    -webkit-transition: all 0s;
 	    -moz-transition: all 0s;
 	    transition: all 0s;
+		}
+		
+		.current-song-play-icon {
+			font-size: 8px;
+			position: relative;
+			left: 1px;
+			top: 1px;
 		}
 		
 	}	
