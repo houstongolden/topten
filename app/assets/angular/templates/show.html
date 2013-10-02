@@ -2,11 +2,15 @@
 
 	<div class="span4">
 		<div ng-controller="VideosController">
-				<div class="row row-add-video">
-					<div class="span4">
-					</div>			
-				</div>
 				<h6 class="text-center playlist-name">{{ playlist.name }} <a href="#/playlist/{{playlist.id}}/edit"><span class="edit-playlist-btn fui-gear"> edit</span></a></h6>
+				
+				<div class="text-center">
+					<button class="btn btn-inverse btn-mini" ng-click="previousVideo();"><span class="fui-arrow-left"></span></button>
+					<button class="btn btn-inverse btn-mini" ng-click="playVideo();"><span class="fui-play"></span></button>
+					<button class="btn btn-inverse btn-mini" ng-click="pauseVideo();"><span class="fui-pause"></span></button>
+					<button class="btn btn-inverse btn-mini" ng-click="nextVideo();"><span class="fui-arrow-right"></span></button>	
+				</div>
+				
 
 				<ul class ="nav nav-list video-list">
 					<li ng-repeat="video in videos" class="item-video item-current-video-{{video.isCurrentSong}}">
@@ -18,14 +22,7 @@
 							</a>
 						</p>
 					</li>
-				</ul>
-				
-				<button class="btn btn-primary btn-mini" ng-click="previousVideo();"><span class="fui-arrow-left"></span></button>
-				<button class="btn btn-primary btn-mini" ng-click="playVideo();"><span class="fui-play"></span></button>
-				<button class="btn btn-primary btn-mini" ng-click="pauseVideo();"><span class="fui-pause"></span></button>
-				<button class="btn btn-primary btn-mini" ng-click="nextVideo();"><span class="fui-arrow-right"></span></button>
-				
-				
+				</ul>				
 				
 		</div>		
 	</div>	

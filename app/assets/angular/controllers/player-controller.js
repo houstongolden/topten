@@ -3,6 +3,9 @@ var topten = angular.module('topten');
 topten.controller('PlayerController', ['$scope', 'Player', 'Video', 'sharedPlaylist', function($scope, Player, Video, sharedPlaylist) {
 	
 	$scope.player = Player;
+	console.log('---------- here ----------')
+	// $scope.player.loadPlayer();
+	console.log('---------- here ----------')
 	$scope.playerState = $scope.player.playerState;
 	$scope.currentVideo = {};
 	

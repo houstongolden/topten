@@ -115,3 +115,19 @@ ul.video-list {
 		
 	}	
 }
+
+.list-order {
+	position: absolute;
+	right: 20px;
+	color: #34495e;
+	font-size: 16px;
+	bottom: 8px;
+}
+
+.left-video-trash {
+	position: relative;
+	display: inline;
+	left: 10px;
+	top: 5px;
+	color: red;
+}
