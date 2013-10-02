@@ -17,10 +17,8 @@ angular.module('youtube', ['ng']).run(function () {
         $window.onYouTubeIframeAPIReady = function () {
             $log.info('Youtube API is ready');
             service.ready = true;
-						// service.bindVideoPlayer('ytplayer');
-						service.player = service.createPlayer();
-						// service.player = service.loadPlayer();
-						
+						// service.player = service.createPlayer();
+						service.loadPlayer();
         };
 
         service.ready = false;
@@ -29,7 +27,7 @@ angular.module('youtube', ['ng']).run(function () {
 				service.videoId = "bK1ZsgQgViQ";
 				service.playerHeight = '405';
 				service.playerWidth = '720';
-				service.playerState = -1;
+				service.playerState = -7;
 
         service.bindVideoPlayer = function (elementId) {
             $log.info('Binding to player ' + elementId);
@@ -49,16 +47,24 @@ angular.module('youtube', ['ng']).run(function () {
 									showinfo: 0
 								},
 								events: {
-									'onStateChange': onPlayerStateChange
+									'onStateChange': this.onPlayerStateChange
 								}
             });
         };
 
-				onPlayerStateChange = function () {
-					service.playerState = service.player.getPlayerState();
-					console.log('---inside onPlayerStateChange of youtube service---');
-					console.log(service.playerState);
-					console.log('---inside onPlayerStateChange of youtube service---');
+				service.onPlayerStateChange = function () {
+					console.log('----------inside onPlayerStateChange of youtube service----------');
+					service.prepStateForBroadcast(service.player.getPlayerState());
+					console.log('----------inside onPlayerStateChange of youtube service----------');
+				};
+				
+				service.prepStateForBroadcast = function (playerState) {
+					this.playerState = playerState;
+					this.broadcastState();
+				};
+				
+				service.broadcastState = function() {
+					$rootScope.$broadcast('handleStateChange');
 				};
 
         service.loadPlayer = function () {
@@ -79,7 +85,8 @@ angular.module('youtube', ['ng']).run(function () {
         return {
             restrict:'A',
             link:function (scope, element) {
-                youtubePlayerApi.bindVideoPlayer(element[0].id);
+            	youtubePlayerApi.bindVideoPlayer(element[0].id);
             }
+
         };
     }]);

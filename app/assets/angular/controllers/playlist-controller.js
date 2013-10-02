@@ -47,7 +47,4 @@ topten.controller('PlaylistCreateController', ['$scope', '$location', 'Playlist'
 
 topten.controller('PlaylistShowController', ['$scope', 'Playlist', 'Video', '$routeParams', function($scope, Playlist, Video, $routeParams) {
     $scope.playlist = Playlist.get({id: $routeParams.id})
-		console.log('in playlist show controller');
-		console.log($scope.playlist);
-		console.log('in playlist show controller');
 }]);

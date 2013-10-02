@@ -9,7 +9,7 @@ topten.factory('Video', ['$resource', function($resource) {
 }]);
 
 topten.factory('Player', ['youtubePlayerApi', function(youtubePlayerApi) {
-	console.log(youtubePlayerApi);
+	// console.log(youtubePlayerApi);
 	return youtubePlayerApi
 }]);
 

@@ -2,8 +2,6 @@ var topten = angular.module('topten');
 
 topten.controller('VideosController', ['$scope', 'Video', 'Player', 'sharedPlaylist', '$routeParams', function($scope, Video, Player, sharedPlaylist, $routeParams) {
 		
-		console.log('in the beginning of the VideosController');
-    //Grab all the comments from the server
     $scope.videos = Video.query({playlistId: $routeParams.id});
 		
 		$scope.currentVideo = {};
@@ -42,17 +40,5 @@ topten.controller('VideosController', ['$scope', 'Video', 'Player', 'sharedPlayl
 		$scope.$on('handleBroadcast', function() {
 			$scope.currentVideo = sharedPlaylist.currentVideo;
 		});
-		
-		// $scope.viewVideo = function(video) { 
-		// 			$scope.currentVideo = video;
-		// 			angular.forEach($scope.videos, function(video) {
-		// 				video.isCurrentSong = '';
-		// 			});
-		// 			video.isCurrentSong = 'current';
-		// 			console.log("current video logged below");
-		// 			console.log($scope.currentVideo);
-		// 		};
-		
-		console.log('in the END of the VideosController');
 		
 }]);
