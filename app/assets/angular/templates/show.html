@@ -19,8 +19,13 @@
 				
 
 				<ul class ="nav nav-list video-list">
-					<li ng-repeat="video in videos" class="item-video item-video-{{video.isCurrentSong}}">
-						<p><a ng-click="viewVideo(video)" href=""><span class="label label-small label-inverse label-index">{{ $index + 1}}</span> {{ video.title }}</a></p>
+					<li ng-repeat="video in videos" class="item-video item-current-video-{{video.isCurrentSong}}">
+						<p>
+							<a ng-click="viewVideo(video)" href="">
+								<span class="label label-small label-inverse label-index">{{ $index + 1}}</span>
+								 {{ video.title }}
+							</a>
+						</p>
 					</li>
 				</ul>
 		</div>		
