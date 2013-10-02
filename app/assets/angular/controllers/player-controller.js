@@ -16,15 +16,20 @@ topten.controller('PlayerController', ['$scope', 'Player', 'Video', 'sharedPlayl
 		$scope.player.player.pauseVideo();
 	},
 	
+	$scope.player.loadVideo = function(video) {
+		// $scope.player.player.loadVideoById(video.youtube_id);
+		this.player.loadVideoById(video.youtube_id);
+	}
+	
 	// $scope.$watch('playerState', function() {
 	// 	console.log('in watch');
 	// 	console.log($scope.playerState);
 	// 	console.log('in watch');
 	// }, true);
 	
-	$scope.$on('handleBroadcast', function() {
-		$scope.player.player.loadVideoById(sharedPlaylist.currentVideo);
-	});
+	// $scope.$on('handleBroadcast', function() {
+	// 	$scope.player.player.loadVideoById(sharedPlaylist.currentVideo);
+	// });
 	
 	$scope.$on('handleStateChange', function() {
 		console.log('old state:' + $scope.playerState);
