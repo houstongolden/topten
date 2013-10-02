@@ -114,17 +114,6 @@ topten.controller('VideosController', ['$scope', 'Video', 'Player', 'sharedPlayl
 			console.log($scope.videos);
 			console.log('^^^^^^^^^^^');
 			console.log('^^^^^^^^^^^');
-		}
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+		}	
 		
 }]);
