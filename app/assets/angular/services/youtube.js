@@ -53,9 +53,7 @@ angular.module('youtube', ['ng']).run(function () {
         };
 
 				service.onPlayerStateChange = function () {
-					console.log('----------inside onPlayerStateChange of youtube service----------');
 					service.prepStateForBroadcast(service.player.getPlayerState());
-					console.log('----------inside onPlayerStateChange of youtube service----------');
 				};
 				
 				service.prepStateForBroadcast = function (playerState) {

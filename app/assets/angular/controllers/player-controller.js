@@ -16,10 +16,6 @@ topten.controller('PlayerController', ['$scope', 'Player', 'Video', 'sharedPlayl
 		$scope.player.player.pauseVideo();
 	},
 	
-	$scope.changeVideo = function() {
-		$scope.player.player.loadVideoById('ylLqUsEOhpk');	
-	},
-	
 	// $scope.$watch('playerState', function() {
 	// 	console.log('in watch');
 	// 	console.log($scope.playerState);
