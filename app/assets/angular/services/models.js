@@ -1,7 +1,10 @@
 var topten = angular.module('topten');
 
 topten.factory('Playlist', ['$resource', function($resource) {
-    return $resource('/playlists/:id', {id: '@id'});
+	var service = $resource('/playlists/:id', {id: '@id'});
+    // return $resource('/playlists/:id', {id: '@id'});
+	return service;
+
 }]);
 
 topten.factory('Video', ['$resource', function($resource) {
