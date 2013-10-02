@@ -8,7 +8,8 @@ topten.factory('Playlist', ['$resource', function($resource) {
 }]);
 
 topten.factory('Video', ['$resource', function($resource) {
-    return $resource('/playlists/:playlistId/videos/:id', {playlistId: '@playlistId', id: '@id'});
+    // return $resource('/playlists/:playlistId/videos/:id', {playlistId: '@playlistId', id: '@id'});
+		return $resource('/playlists/:playlistId/videos/:id', {playlistId: '@playlistId', id: '@id'}, {update: {method: "PUT"}} );
 }]);
 
 topten.factory('Player', ['youtubePlayerApi', function(youtubePlayerApi) {

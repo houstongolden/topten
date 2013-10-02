@@ -10,4 +10,5 @@ class VideosController < InheritedResources::Base
     @video.playlist_order = @playlist.next_available_playlist_order
     create!
   end
+  
 end

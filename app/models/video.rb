@@ -7,6 +7,8 @@ class Video < ActiveRecord::Base
   belongs_to :playlist
   has_many :playlists, :class_name => 'Playlist', :foreign_key => 'current_video_id'
   
+  default_scope order('playlist_order ASC')
+  
   
   def self.find_video_information(youtube_url)
     youtube_id = parse_youtube_id_from_url(youtube_url)

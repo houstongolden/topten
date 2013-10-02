@@ -52,9 +52,4 @@ topten.controller('PlaylistShowController', ['$scope', 'Playlist', 'Video', '$ro
 topten.controller('PlaylistEditController', ['$scope', 'Playlist', 'Video', '$routeParams', function($scope, Playlist, Video, $routeParams) {
 	$scope.playlist = Playlist.get({id: $routeParams.id});
 	
-	$scope.editVideoOrder = function(video) {
-		console.log('----- editVideoOrder inside PlaylistEditController -----')
-		console.log(video);
-		console.log('----- editVideoOrder inside PlaylistEditController -----')
-	}
 }]);

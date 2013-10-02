@@ -10,9 +10,17 @@
 						</form>
 					</div>			
 				</div>
-				<h6 class="text-center playlist-name">{{ playlist.name }} <a href="#/playlist/{{playlist.id}}"><span class="save-playlist-btn fui-lock"> save</span></a></h6>
+				<h6 class="text-center playlist-name">
+					<a href="#/playlist/{{playlist.id}}">
+						<span class="test-playlist-btn fui-lock">cancel</span>
+					</a>
+					{{ playlist.name }}
+					<a ng-click="checkVideoOrder();" href=''>
+						<span class="fui-lock save-playlist-btn">save</span>
+					</a>
+				</h6>
 
-				<ul class ="nav nav-list video-list">
+				<ul class ="nav nav-list video-list" ui:sortable ng:model="videos">
 					<li ng-repeat="video in videos" class="item-video item-current-video-{{video.isCurrentSong}}">
 						<p>
 							<a ng-click="editVideoOrder(video)" href="">

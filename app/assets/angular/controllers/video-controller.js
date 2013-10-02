@@ -100,9 +100,21 @@ topten.controller('VideosController', ['$scope', 'Video', 'Player', 'sharedPlayl
 			});
 			$scope.player.loadVideo(video);
 		}
-		
-		
-		
+				
+		$scope.checkVideoOrder = function() {
+			console.log('^^^^^^^^^^^');
+			console.log('^^^^^^^^^^^');
+			angular.forEach($scope.videos, function(video, index) {
+				console.log('video playlist_order: ' + video.playlist_order);
+				console.log('video index order: ' + index);
+				video.playlist_order = index + 1;
+				video.playlistId = 2;
+				video.$update();
+			});
+			console.log($scope.videos);
+			console.log('^^^^^^^^^^^');
+			console.log('^^^^^^^^^^^');
+		}
 		
 		
 		
