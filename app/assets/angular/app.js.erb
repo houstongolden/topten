@@ -12,5 +12,6 @@ angular.module('topten', ['ngResource', 'topten.loading', 'youtube'])
       .when('/',          {controller: 'PlaylistIndexController',    templateUrl: '<%= asset_path('templates/index.html') %>'})
       .when('/playlist/new', {controller: 'PlaylistCreateController',   templateUrl: '<%= asset_path('templates/new.html') %>'})
       .when('/playlist/:id', {controller: 'PlaylistShowController',     templateUrl: '<%= asset_path('templates/show.html') %>'})
+			.when('/playlist/:id/edit', {controller: 'PlaylistEditController', templateUrl: '<%= asset_path('templates/edit.html') %>'})
       .otherwise({redirectTo: '/'});
 }]);

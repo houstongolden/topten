@@ -37,6 +37,14 @@ topten.controller('VideosController', ['$scope', 'Video', 'Player', 'sharedPlayl
         });
     };
 
+		$scope.destroy = function(index) {
+			
+			// Tell the server to remove the object
+			Video.remove({id: $scope.videos[index].id}, function() {
+				$scope.videos.splice(index, 1);
+			});
+		}
+
 		$scope.$watch('currentVideo', function(newVal, oldVal) {
 			if (newVal) {
 				console.log('watching currentVideo change!');
