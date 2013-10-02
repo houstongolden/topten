@@ -6,6 +6,8 @@ class VideosController < InheritedResources::Base
   def create
     @video = Video.find_video_information(params[:video][:url])
     @video.playlist_id = params[:playlist_id]
+    @playlist = Playlist.find(params[:playlist_id])
+    @video.playlist_order = @playlist.next_available_playlist_order
     create!
   end
 end

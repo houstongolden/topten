@@ -2,10 +2,11 @@ require 'youtube_it'
 
 class Video < ActiveRecord::Base
   
-  attr_accessible :title, :url, :youtube_id, :thumbnail
+  attr_accessible :title, :url, :youtube_id, :thumbnail, :playlist_order
   
   belongs_to :playlist
   has_many :playlists, :class_name => 'Playlist', :foreign_key => 'current_video_id'
+  
   
   def self.find_video_information(youtube_url)
     youtube_id = parse_youtube_id_from_url(youtube_url)
