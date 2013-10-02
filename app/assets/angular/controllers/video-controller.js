@@ -93,4 +93,18 @@ topten.controller('VideosController', ['$scope', 'Video', 'Player', 'sharedPlayl
 			$scope.player.loadVideo(video);
 		}
 		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 }]);
