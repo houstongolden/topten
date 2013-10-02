@@ -5,34 +5,38 @@ topten.controller('PlayerController', ['$scope', 'Player', 'Video', 'sharedPlayl
 	$scope.player = Player;
 	$scope.playerState = $scope.player.playerState;
 	$scope.currentVideo = {};
-	console.log('----------PlayerController----------');
-	console.log($scope.player);
-	console.log($scope.player.playerState);
 	
 	$scope.playVideo = function() {
+		console.log('--- PlayerController playVideo called ---')
 		$scope.player.player.playVideo();
 	}, 
 	
+	$scope.player.playVideo = function() {
+		this.player.playVideo();
+	};
+	
+	$scope.player.pauseVideo = function() {
+		this.player.pauseVideo();
+	};
+	
 	$scope.pauseVideo = function() {
+		console.log('--- PlayerController pauseVideo called ---')
 		$scope.player.player.pauseVideo();
 	},
 	
 	$scope.player.loadVideo = function(video) {
 		// $scope.player.player.loadVideoById(video.youtube_id);
 		$scope.currentVideo = video;
-		console.log('INSIDE LOAD VIDEO');
-		console.log('----------')
-		console.log('----------')
-		console.log('currentVideo of scope in player controller: ');
-		console.log($scope.currentVideo);
 		this.player.loadVideoById(video.youtube_id);
 	},
 	
 	$scope.previousVideo = function() {
+		console.log('this was called: previousVideo');
 		
 	},
 	
 	$scope.nextVideo = function() {
+		console.log('this was called: nextVideo');
 	}
 	// $scope.$watch('playerState', function() {
 	// 	console.log('in watch');
@@ -49,9 +53,6 @@ topten.controller('PlayerController', ['$scope', 'Player', 'Video', 'sharedPlayl
 		console.log('handling the state change');
 		$scope.playerState = $scope.player.playerState;
 		console.log('new state:' + $scope.playerState);
-	});
-	
-	console.log('----------PlayerController----------');
-	
+	});	
 	
 }]);

@@ -3,13 +3,16 @@ var topten = angular.module('topten');
 topten.controller('VideosController', ['$scope', 'Video', 'Player', 'sharedPlaylist', '$routeParams', function($scope, Video, Player, sharedPlaylist, $routeParams) {
 		
 		$scope.player = Player;
-		console.log('----------Videos Controller----------');
-		console.log($scope.player);
-		console.log($scope.player.playerState);
-		console.log('----------Videos Controller----------');
 		
-		$scope.videos = Video.query({playlistId: $routeParams.id});
-		
+		// $scope.videos = Video.query({playlistId: $routeParams.id});
+		$scope.videos = Video.query({playlistId: $routeParams.id}, function(u) {
+			console.log('---in the videos query callback---');
+			$scope.currentVideo = $scope.videos[0]
+			console.log($scope.player);
+			console.log($scope.player.playerState);
+			console.log('---in the videos query callback---');
+		});
+				
 		$scope.currentVideo = {};
 		$scope.currentVideo.youtube_id = 'Cxliw92yHzs';
 		
@@ -45,7 +48,39 @@ topten.controller('VideosController', ['$scope', 'Video', 'Player', 'sharedPlayl
 			}
 		});
 		
-		$scope.viewVideo = function(video) {
+		$scope.previousVideo = function() {
+			var previousVideoIndex = $scope.currentVideo.playlist_order - 2
+			if (previousVideoIndex == -1 )
+				{
+					previousVideoIndex = 0;
+				}
+			var previousVideo = $scope.videos[previousVideoIndex];
+			$scope.viewVideo(previousVideo);
+		};
+				
+		$scope.playVideo = function() {
+			if ($scope.player.playerState == -7 )
+			 {
+				return $scope.viewVideo($scope.videos[0]);
+			}
+			$scope.player.playVideo();
+		};
+		
+		$scope.pauseVideo = function() {
+			$scope.player.pauseVideo();
+		};
+		
+		$scope.nextVideo = function() {
+			var nextVideoIndex = $scope.currentVideo.playlist_order
+			if (nextVideoIndex == $scope.videos.length )
+				{
+					nextVideoIndex = 0;
+				}
+			var nextVideo = $scope.videos[nextVideoIndex];
+			$scope.viewVideo(nextVideo);
+		};
+		
+		$scope.viewVideo = function(video) {			
 			$scope.currentVideo = video;
 			angular.forEach($scope.videos, function(video) {
 				if ($scope.currentVideo != video) {
@@ -54,25 +89,8 @@ topten.controller('VideosController', ['$scope', 'Video', 'Player', 'sharedPlayl
 				else {
 					video.isCurrentSong = 'current';
 				}
-				
-				// video.isCurrentSong = '';
 			});
-			// video.isCurrentSong = 'current';
 			$scope.player.loadVideo(video);
 		}
-		
-		// $scope.viewVideo = function(video) {
-		// 	
-		// 	$scope.currentVideo = video;
-		// 	angular.forEach($scope.videos, function(video) {
-		// 		video.isCurrentSong = '';
-		// 	});
-		// 	video.isCurrentSong = 'current';
-		// 	sharedPlaylist.prepForBroadcast(video.youtube_id);
-		// };
-		
-		// $scope.$on('handleBroadcast', function() {
-		// 	$scope.currentVideo = sharedPlaylist.currentVideo;
-		// });
 		
 }]);
