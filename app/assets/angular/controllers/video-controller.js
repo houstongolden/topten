@@ -48,9 +48,16 @@ topten.controller('VideosController', ['$scope', 'Video', 'Player', 'sharedPlayl
 		$scope.viewVideo = function(video) {
 			$scope.currentVideo = video;
 			angular.forEach($scope.videos, function(video) {
-				video.isCurrentSong = '';
+				if ($scope.currentVideo != video) {
+					video.isCurrentSong = '';
+				}
+				else {
+					video.isCurrentSong = 'current';
+				}
+				
+				// video.isCurrentSong = '';
 			});
-			video.isCurrentSong = 'current';
+			// video.isCurrentSong = 'current';
 			$scope.player.loadVideo(video);
 		}
 		

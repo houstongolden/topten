@@ -4,6 +4,7 @@ topten.controller('PlayerController', ['$scope', 'Player', 'Video', 'sharedPlayl
 	
 	$scope.player = Player;
 	$scope.playerState = $scope.player.playerState;
+	$scope.currentVideo = {};
 	console.log('----------PlayerController----------');
 	console.log($scope.player);
 	console.log($scope.player.playerState);
@@ -18,9 +19,21 @@ topten.controller('PlayerController', ['$scope', 'Player', 'Video', 'sharedPlayl
 	
 	$scope.player.loadVideo = function(video) {
 		// $scope.player.player.loadVideoById(video.youtube_id);
+		$scope.currentVideo = video;
+		console.log('INSIDE LOAD VIDEO');
+		console.log('----------')
+		console.log('----------')
+		console.log('currentVideo of scope in player controller: ');
+		console.log($scope.currentVideo);
 		this.player.loadVideoById(video.youtube_id);
-	}
+	},
 	
+	$scope.previousVideo = function() {
+		
+	},
+	
+	$scope.nextVideo = function() {
+	}
 	// $scope.$watch('playerState', function() {
 	// 	console.log('in watch');
 	// 	console.log($scope.playerState);
