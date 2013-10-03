@@ -1,56 +1,52 @@
 <div class="row">
 
-	<div class="span4">
-		<div ng-controller="VideosController">
-				<div class="row row-add-video">
-					<div class="span4">
-						<form ng-submit="save()" class="text-center">
-							<input type="text" ng-model="url" class="small" placeholder="http:www.youtube.com/watch?v=" required>
-							<button type="submit" class="btn btn-inverse btn-mini" style="margin-top: -10px;"><span class="fui-plus"></span></button>
-						</form>
-					</div>			
-				</div>
-				<h6 class="text-center playlist-name">
-					<a href="#/playlist/{{playlist.id}}">
-						<span class="test-playlist-btn fui-lock">cancel</span>
-					</a>
-					{{ playlist.name }}
-					<a ng-click="checkVideoOrder();" href=''>
-						<span class="fui-lock save-playlist-btn">save</span>
-					</a>
-				</h6>
-
-				<ul class ="nav nav-list video-list" ui:sortable ng:model="videos">
-					<li ng-repeat="video in videos" class="item-video item-current-video-{{video.isCurrentSong}}">
-						<p>
-							<a ng-click="editVideoOrder(video)" href="">
-								<span class="label label-small label-inverse label-index" ng-show="video.isCurrentSong"><i class='fui-play current-song-play-icon'></i></span>
-								<span class="label label-small label-inverse label-index" ng-hide="video.isCurrentSong">{{ $index + 1}}</span>
-								 {{ video.title | truncate:40:"..." }}
-								<i class="fui-list list-order"></i>
-							</a>
-						</p>
-					</li>
-				</ul>
-				
-				<button class="btn btn-primary btn-mini" ng-click="previousVideo();"><span class="fui-arrow-left"></span></button>
-				<button class="btn btn-primary btn-mini" ng-click="playVideo();"><span class="fui-play"></span></button>
-				<button class="btn btn-primary btn-mini" ng-click="pauseVideo();"><span class="fui-pause"></span></button>
-				<button class="btn btn-primary btn-mini" ng-click="nextVideo();"><span class="fui-arrow-right"></span></button>
-				
-				
-				
+	<div ng-controller="VideosController">
+		<div class="span4">
+			<ul class ="nav nav-list video-list" ui:sortable ng:model="videos">
+				<li ng-repeat="video in videos" class="item-video item-current-video-{{video.isCurrentSong}}">
+					<p>
+						<a ng-click="editVideoOrder(video)" href="">
+							<span class="label label-small label-inverse label-index" ng-show="video.isCurrentSong"><i class='fui-play current-song-play-icon'></i></span>
+							<span class="label label-small label-inverse label-index" ng-hide="video.isCurrentSong">{{ $index + 1}}</span>
+							 {{ video.title | truncate:40:"..." }}
+							<i class="fui-list list-order"></i>
+						</a>
+					</p>
+				</li>
+			</ul>
+						
 		</div>		
-	</div>	
 
 
-	<div class="span8">
-			<div ng-controller="PlayerController">
-				<div class="row">
-					<div id="ytplayer" youtube-player></div>
-				</div>
+
+
+
+		<div class="span8">
+			
+			<div class="row">
+				<a href="#/playlist/{{playlist.id}}">
+					<span class="XXXtest-playlist-btn fui-lock">CANCEL</span>
+				</a>
+				<h2 class="playlist-name text-center">{{ playlist.name }}</h2>
+				<a ng-click="checkVideoOrder();" href=''>
+					<span class="fui-lock XXXsave-playlist-btn">save</span>
+				</a>
+			</div>
+			
+			<div class="row row-add-video">
+				<div class="span4">
+					<form ng-submit="save()" class="text-center">
+						<input type="text" ng-model="url" class="small" placeholder="http:www.youtube.com/watch?v=" required>
+						<button type="submit" class="btn btn-inverse btn-mini" style="margin-top: -10px;"><span class="fui-plus"></span></button>
+					</form>
+				</div>			
+			</div>
+			
 		</div>
-		
+
+
+
+
 	</div>
 
 </div>
