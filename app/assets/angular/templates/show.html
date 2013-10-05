@@ -1,9 +1,7 @@
 <div class="row">
 
 	<div class="span4">
-		<div ng-controller="VideosController">
-				<h6 class="text-center playlist-name">{{ playlist.name }} <a href="#/playlist/{{playlist.id}}/edit"><span class="edit-playlist-btn fui-gear"> edit</span></a></h6>
-				
+		<div ng-controller="VideosController">				
 				<div class="text-center">
 					<button class="btn btn-inverse btn-mini" ng-click="previousVideo();"><span class="fui-arrow-left"></span></button>
 					<button class="btn btn-inverse btn-mini" ng-click="playVideo();"><span class="fui-play"></span></button>
@@ -30,6 +28,12 @@
 
 	<div class="span8">
 			<div ng-controller="PlayerController">
+				<div class="row">
+					<h2 class="text-center playlist-name show-playlist-name">
+						{{playlist.name }} <a href="#/playlist/{{playlist.id}}/edit"><span class="show-edit-playlist-btn fui-gear"> edit</span></a>
+					</h2>
+				</div>
+				
 				<div class="row">
 					<div id="ytplayer" youtube-player></div>
 				</div>

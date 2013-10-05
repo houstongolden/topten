@@ -131,3 +131,16 @@ ul.video-list {
 	top: 5px;
 	color: red;
 }
+
+.show-playlist-name {
+	margin-bottom: 15px;
+	
+	.show-edit-playlist-btn {
+		font-size: 14px;
+		position: relative;
+		color: #e74c3c;
+		left: 2px;
+		bottom: 20px;
+		font-weight: 600;
+	}
+}

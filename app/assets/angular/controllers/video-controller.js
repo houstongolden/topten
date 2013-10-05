@@ -38,9 +38,9 @@ topten.controller('VideosController', ['$scope', 'Video', 'Player', 'sharedPlayl
     };
 
 		$scope.destroy = function(index) {
-			
+			console.log('here!!');
 			// Tell the server to remove the object
-			Video.remove({id: $scope.videos[index].id}, function() {
+			Video.remove({id: $scope.videos[index].id, playlistId: $routeParams.id}, function() {
 				$scope.videos.splice(index, 1);
 			});
 		}
@@ -99,7 +99,13 @@ topten.controller('VideosController', ['$scope', 'Video', 'Player', 'sharedPlayl
 				}
 			});
 			$scope.player.loadVideo(video);
-		}
+		};
+		
+		$scope.logVideo = function(video) {
+			console.log('--- logging video ---');
+			console.log(video);
+			console.log('--- logging video ---');
+		};
 				
 		$scope.checkVideoOrder = function() {
 			console.log('^^^^^^^^^^^');
@@ -114,6 +120,12 @@ topten.controller('VideosController', ['$scope', 'Video', 'Player', 'sharedPlayl
 			console.log($scope.videos);
 			console.log('^^^^^^^^^^^');
 			console.log('^^^^^^^^^^^');
+		};
+		
+		$scope.clickTrash = function(video) {
+			console.log('----- clickTrash function -----');
+			console.log(video);
+			console.log('----- clickTrash function -----');
 		};
 		
 		$scope.editVideoOrder = function(video) {

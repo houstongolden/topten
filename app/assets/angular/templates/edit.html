@@ -2,15 +2,16 @@
 
 	<div ng-controller="VideosController">
 		<div class="span4">
-			<ul class ="nav nav-list video-list" ui:sortable ng:model="videos">
+			
+			<ul class ="nav nav-list edit-video-list" ui:sortable ng:model="videos">
 				<li ng-repeat="video in videos" class="item-video item-current-video-{{video.isCurrentSong}}">
 					<p>
-						<a ng-click="editVideoOrder(video)" href="">
-							<span class="label label-small label-inverse label-index" ng-show="video.isCurrentSong"><i class='fui-play current-song-play-icon'></i></span>
-							<span class="label label-small label-inverse label-index" ng-hide="video.isCurrentSong">{{ $index + 1}}</span>
-							 {{ video.title | truncate:40:"..." }}
-							<i class="fui-list list-order"></i>
-						</a>
+						<div class="main-video-diva">
+							<span ng-click="destroy($index)"><i class="fui-trash delete-video-icon"></i></span>
+							{{ video.title | truncate:40:"..." }}
+							<span class="fui-list" style="position: absolute; right: 10px;"></span>
+						</div>
+
 					</p>
 				</li>
 			</ul>
@@ -24,22 +25,21 @@
 		<div class="span8">
 			
 			<div class="row">
-				<a href="#/playlist/{{playlist.id}}">
-					<span class="XXXtest-playlist-btn fui-lock">CANCEL</span>
-				</a>
-				<h2 class="playlist-name text-center">{{ playlist.name }}</h2>
-				<a ng-click="checkVideoOrder();" href=''>
-					<span class="fui-lock XXXsave-playlist-btn">save</span>
-				</a>
+				<h2 class="playlist-name text-center" style="margin-bottom: 12px;">{{ playlist.name }}</h2>
 			</div>
 			
 			<div class="row row-add-video">
-				<div class="span4">
+				<div class="span8">
 					<form ng-submit="save()" class="text-center">
-						<input type="text" ng-model="url" class="small" placeholder="http:www.youtube.com/watch?v=" required>
-						<button type="submit" class="btn btn-inverse btn-mini" style="margin-top: -10px;"><span class="fui-plus"></span></button>
+						<input type="text" ng-model="url" class="huge span6" placeholder="http:www.youtube.com/watch?v=" required>
+						<button type="submit" class="btn btn-info btn-huge" style="margin-top: -10px;"><span class="fui-plus"></span></button>
 					</form>
 				</div>			
+			</div>
+			
+			<div class="row text-center">
+				<a href="#/playlist/{{playlist.id}}" class="btn btn-default btn-huge btn-wide" style="margin-right: 3px;">cancel</a>
+				<a ng-click="checkVideoOrder();" href='' class="btn btn-info btn-huge btn-wide" style="margin-left: 3px;	">save</a>
 			</div>
 			
 		</div>
